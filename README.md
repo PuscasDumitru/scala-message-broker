@@ -1,4 +1,3 @@
-# dumitru
 
 Running the Code
 ----------------
