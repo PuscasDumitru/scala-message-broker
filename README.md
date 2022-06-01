@@ -32,15 +32,15 @@ The system was designed using the Actor Model, specifically the Publish/Subscrib
 
 ### **`MessageBroker` General Diagram**
 
-![generalDiag](./docs/images/mb_message_exchange.png)
+![generalDiag](./diagrams/generalDiag.png)
 
 ### **`MessageBroker` Supervision Tree** 
 
-![treeDiag](./docs/images/sup_tree.png)
+![treeDiag](./diagrams/treeDiag.png)
 
 ### **`MessageBroker` Message Exchange Diagram**
 
-![messageDiag](./docs/images/common.png)
+![messageDiag](./diagrams/messageDiag.png)
 
 The system uses Akka’s EventStream API to allow other apps to publish and subscribe to topics and content. 
 An Akka EventStream is a pub-sub stream of events both system and user generated, where subscribers are ActorRefs and the channels are Classes and Events are any java.lang.Object. EventStreams employ SubchannelClassification, which means that if you listen to a Class, you'll receive any message that is of that type or a subtype.
