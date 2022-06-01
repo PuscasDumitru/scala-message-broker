@@ -1,16 +1,21 @@
+> Real-Time Programming Lab
+> Message Broker 
+> Dumitru Puscas, FAF-192
+
+
 `MessageBroker` is a TCP server created with Scala using the Akka library, any client/producer can connect to it using a tool like `telnet` or `netcat`.
 The system was designed using the Actor Model, specifically the Publish/Subscribe topology.
 
 
-RTP Server(producer)
+### **RTP Server(producer)**
 
 `curl --url http://localhost:4000`
      
-1. Process tweets, that is compute the sentiment score, as they come\n            
-2. Have a group of workers and a supervisor\n            
-3. Dynamically change the number of actors depending on the load\n            
-4. In case of panic message, kill the worker actor then restart\n            
-5. Actors also must have a random sleep, in the range of 50ms to 500ms, normally distributed\n            
+1. Process tweets, that is compute the sentiment score, as they come            
+2. Have a group of workers and a supervisor         
+3. Dynamically change the number of actors depending on the load            
+4. In case of panic message, kill the worker actor then restart            
+5. Actors also must have a random sleep, in the range of 50ms to 500ms, normally distributed            
 ","general_description":"To start streaming data, access the /tweets/1 and /tweets/2 routes. Data is in SSE/EventSource format and is made of real Twitter API data, to access the text use the text field of the obtained json. The dictionary of sentiment scores can be found at the /emotion_values route. Use the `Sum(word_em_score) / Nr. of words in a tweet` to compute the emotional score of a tweet."}
 
 
@@ -38,14 +43,14 @@ RTP Server(producer)
 The system uses Akka’s EventStream API to allow other apps to publish and subscribe to topics and content. 
 An Akka EventStream is a pub-sub stream of events both system and user generated, where subscribers are ActorRefs and the channels are Classes and Events are any java.lang.Object. EventStreams employ SubchannelClassification, which means that if you listen to a Class, you'll receive any message that is of that type or a subtype.
 
-Endpoints
+### **Endpoints**
 
 •	http://localhost:8080/publish/{topic} POST {Message} 
 •	http://localhost:8080/subscribe/{topic} GET
 •	http://localhost:8080/unsubscribe/{topic} GET
 
 
-Running the Code
+### **Running The Code**
 
 Follow these steps to run the code:
 
