@@ -1,5 +1,7 @@
 > Real-Time Programming Lab
+> 
 > Message Broker 
+> 
 > Dumitru Puscas, FAF-192
 
 
@@ -46,7 +48,9 @@ An Akka EventStream is a pub-sub stream of events both system and user generated
 ### **Endpoints**
 
 •	http://localhost:8080/publish/{topic} POST {Message} 
+
 •	http://localhost:8080/subscribe/{topic} GET
+
 •	http://localhost:8080/unsubscribe/{topic} GET
 
 
