@@ -1,0 +1,26 @@
+version: 1.0
+services:
+	
+	# SSE Tweets Stream
+	sse_api:
+		image: alexburlacu/rtp-server:faf18x
+		container_name: sse_api
+		ports:
+		  - 4000:4000
+		  
+	dumitru:
+	    image: dumitru/dumitru
+	    volumes:
+	      - /tmp/data:/data
+	      - /tmp/config:/root/.dumitru
+	    ports:
+	      - "9000:9000"
+	    environment:
+	      DUMITRU_ACCESS_KEY: dumitru_access_key
+	      DUMITRU_SECRET_KEY: dumitru_secret_key
+	    command: server /data
+
+  	mongo:
+    	image: mongo
+    	ports:
+      		- "27017:27017"
