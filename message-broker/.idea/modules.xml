@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/message-broker.iml" filepath="$PROJECT_DIR$/.idea/modules/message-broker.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/message-broker-build.iml" filepath="$PROJECT_DIR$/.idea/modules/message-broker-build.iml" />
+    </modules>
+  </component>
+</project>
