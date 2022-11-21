@@ -23,6 +23,8 @@ class TCPConnectionHandler extends Actor {
   override def receive: Actor.Receive = {
     case Received(data) =>
       val decoded = data.utf8String
+      println(data)
+      println(decoded)
       sender() ! Write(ByteString(s"Message retrieved: $decoded"))
     case message: ConnectionClosed =>
       println("Connection has been closed")
