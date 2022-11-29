@@ -1,5 +1,8 @@
 import scala.collection.mutable.ArrayBuffer
+
 object Data {
-  //var topics = scala.collection.mutable.Map(1 -> 2, 3 -> 4, 5 -> 6)
+  var consumers: scala.collection.mutable.Map[String, ArrayBuffer[String]] = scala.collection.mutable.Map[String, ArrayBuffer[String]]()
   var topics: scala.collection.mutable.Map[String, ArrayBuffer[String]] = scala.collection.mutable.Map[String, ArrayBuffer[String]]()
+
+  case class MessageJson(messageReceived: String, sender: String)
 }

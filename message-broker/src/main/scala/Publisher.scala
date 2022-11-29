@@ -10,14 +10,15 @@ class Publisher extends Actor {
 
     override def receive: Receive = {
         case message: String =>
-            val json: JsValue = Json.parse(message)
+            val fixedMessage = message.substring(2)
+            val json: JsValue = Json.parse(fixedMessage)
             val topic = (json \ "topic").as[String]
             
             if (!Data.topics.contains(topic)) { 
                 Data.topics += (topic -> ArrayBuffer[String]())
             }
             
-            Data.topics(topic) += message
+            Data.topics(topic) += fixedMessage
 
             // Data.topics.keys.foreach{i =>
             //     print("Key = " + i)
